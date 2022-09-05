@@ -22,11 +22,11 @@ const diccionario = {
   Suscripciones: IconoSuscripciones
 }
 
-const Gasto = ({gasto}) => {
+const Gasto = ({gasto, setGastoEditar}) => {
 
   const leadingActions = () => (
     <LeadingActions>
-      <SwipeAction onClick={() => console.log("Editar")}>       {/* onClick obligatorio */}
+      <SwipeAction onClick={() => setGastoEditar(gasto)}>       {/* onClick obligatorio (para la accion del swipe?) */}
         Editar
       </SwipeAction>
     </LeadingActions>  
