@@ -17,6 +17,7 @@ function App() {
   
   const guardarGasto = gasto => {
     gasto.id = generarId()
+    gasto.fecha = Date.now()
     setGastos([...gastos, gasto])               //...gastos es una copia del arreglo gastos
 
     setAnimarModal(false)
@@ -36,8 +37,9 @@ function App() {
   }
 
   return (
-    <div>
+    <div className={modal ? "fijar" : ""}>        {/* Equivale a modal && "fijar" (? */}
       <Header 
+        gastos={gastos}
         presupuesto={presupuesto} 
         setPresupuesto={setPresupuesto} 
         isValidPresupuesto={isValidPresupuesto} 
